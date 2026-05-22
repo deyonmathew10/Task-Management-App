@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>iNexaX</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/dashboard.css">
+<title>iNexaX Dashboard</title>
 
+<link rel="stylesheet"
+href="css/dashboard.css">
 
 </head>
 
@@ -16,35 +19,52 @@
 
 <div class="dashboard-container">
 
-   
+
+
     <aside class="sidebar">
 
         <h2>iNexaX</h2>
 
         <ul>
 
-            <li class="active sidebar-item" data-section="dashboardSection">
+            <li class="active sidebar-item"
+            data-section="dashboardSection">
                 Dashboard
             </li>
 
-            <li class="sidebar-item" data-section="taskSection">
+            <li class="sidebar-item"
+            data-section="taskSection">
                 Tasks
             </li>
 
-            <li class="sidebar-item" data-section="projectSection">
+            <li class="sidebar-item"
+            data-section="projectSection">
                 Projects
             </li>
 
-            <li class="sidebar-item" data-section="calendarSection">
+            <li class="sidebar-item"
+            data-section="calendarSection">
                 Calendar
             </li>
 
-            <li class="sidebar-item" data-section="reportSection">
+            <li class="sidebar-item"
+            data-section="reportSection">
                 Reports
             </li>
 
-            <li class="sidebar-item" data-section="notificationSection">
+            <li class="sidebar-item"
+            data-section="notificationSection">
                 Notifications
+            </li>
+
+            <li class="sidebar-item"
+            data-section="weatherSection">
+                Weather
+            </li>
+
+            <li class="sidebar-item"
+            data-section="notesSection">
+                Notes
             </li>
 
             <li id="darkModeBtn">
@@ -59,8 +79,10 @@
 
     <main class="main-content">
 
-      
-        <section id="dashboardSection" class="dashboard-section active-section">
+        
+
+        <section id="dashboardSection"
+        class="dashboard-section active-section">
 
             <div class="topbar">
 
@@ -73,6 +95,37 @@
             </div>
 
             
+
+            <div class="search-area">
+
+                <input type="text"
+                id="searchTask"
+                placeholder="Search Tasks...">
+
+                <select id="filterPriority">
+
+                    <option value="all">
+                        All Priorities
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                    <option value="Medium">
+                        Medium
+                    </option>
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                </select>
+
+            </div>
+
+            
+
             <div class="stats">
 
                 <div class="stat-card" id="totalCard">
@@ -109,7 +162,7 @@
 
             </div>
 
-            
+           
 
             <div class="kanban-board">
 
@@ -141,8 +194,9 @@
 
         </section>
 
-
-        <section id="taskSection" class="dashboard-section">
+        
+        <section id="taskSection"
+        class="dashboard-section">
 
             <h1>Tasks</h1>
 
@@ -154,9 +208,10 @@
 
         </section>
 
-       
+        
 
-        <section id="projectSection" class="dashboard-section">
+        <section id="projectSection"
+        class="dashboard-section">
 
             <h1>Projects</h1>
 
@@ -166,7 +221,9 @@
 
                     <h3>Website Redesign</h3>
 
-                    <p>UI/UX Enhancement Project</p>
+                    <p>
+                        UI/UX Enhancement Project
+                    </p>
 
                 </div>
 
@@ -174,7 +231,19 @@
 
                     <h3>Mobile App</h3>
 
-                    <p>Cross Platform Development</p>
+                    <p>
+                        Cross Platform Development
+                    </p>
+
+                </div>
+
+                <div class="project-card">
+
+                    <h3>CRM Dashboard</h3>
+
+                    <p>
+                        Enterprise Productivity System
+                    </p>
 
                 </div>
 
@@ -183,7 +252,9 @@
         </section>
 
         
-        <section id="calendarSection" class="dashboard-section">
+
+        <section id="calendarSection"
+        class="dashboard-section">
 
             <h1>Calendar</h1>
 
@@ -193,13 +264,15 @@
                     Upcoming meetings, schedules and deadlines will appear here.
                 </p>
 
+                <input type="date">
+
             </div>
 
         </section>
 
        
-
-        <section id="reportSection" class="dashboard-section">
+        <section id="reportSection"
+        class="dashboard-section">
 
             <h1>Reports & Analytics</h1>
 
@@ -225,12 +298,24 @@
 
                 </div>
 
+                <div class="report-card">
+
+                    <h3>Pending Tasks</h3>
+
+                    <p id="pendingReport">
+                        0
+                    </p>
+
+                </div>
+
             </div>
 
         </section>
 
-       
-        <section id="notificationSection" class="dashboard-section">
+        
+
+        <section id="notificationSection"
+        class="dashboard-section">
 
             <h1>Notifications</h1>
 
@@ -242,13 +327,58 @@
 
         </section>
 
+        
+
+        <section id="weatherSection"
+        class="dashboard-section">
+
+            <h1>Weather API</h1>
+
+            <div class="section-box">
+
+                <input type="text"
+                id="cityInput"
+                placeholder="Enter City">
+
+                <button id="weatherBtn">
+                    Check Weather
+                </button>
+
+                <div id="weatherResult"></div>
+
+            </div>
+
+        </section>
+
+    
+
+        <section id="notesSection"
+        class="dashboard-section">
+
+            <h1>Notes App</h1>
+
+            <div class="section-box">
+
+                <textarea id="noteInput"
+                placeholder="Write your notes..."></textarea>
+
+                <button id="saveNoteBtn">
+                    Save Note
+                </button>
+
+                <div id="notesContainer"></div>
+
+            </div>
+
+        </section>
+
     </main>
 
 </div>
 
 
-
-<div class="modal" id="taskModal">
+<div class="modal"
+id="taskModal">
 
     <div class="modal-content">
 
@@ -256,7 +386,63 @@
 
         <h2>Create Task</h2>
 
-        <input type="text" id="taskInput" placeholder="Enter Task Name">
+        <input type="text"
+        id="taskInput"
+        placeholder="Enter Task Name">
+
+        <textarea id="taskDescription"
+        placeholder="Task Description"></textarea>
+
+        <input type="date"
+        id="taskDate">
+
+        <select id="taskPriority">
+
+            <option value="">
+                Select Priority
+            </option>
+
+            <option value="High">
+                High
+            </option>
+
+            <option value="Medium">
+                Medium
+            </option>
+
+            <option value="Low">
+                Low
+            </option>
+
+        </select>
+
+        <select id="taskMember">
+
+            <option value="">
+                Assign Team Member
+            </option>
+
+            <option value="John">
+                John
+            </option>
+
+            <option value="Sarah">
+                Sarah
+            </option>
+
+            <option value="David">
+                David
+            </option>
+
+            <option value="Emma">
+                Emma
+            </option>
+
+        </select>
+
+        <input type="number"
+        id="taskTimer"
+        placeholder="Task Duration (minutes)">
 
         <button id="addTaskBtn">
             Add Task
@@ -266,7 +452,8 @@
 
 </div>
 
-<div class="modal" id="statsModal">
+<div class="modal"
+id="statsModal">
 
     <div class="modal-content stats-content">
 
@@ -282,7 +469,11 @@
 
 </div>
 
+
+<div id="toast"></div>
+
 <script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
