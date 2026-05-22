@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>iNexaX</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+   
+    <aside class="sidebar">
+
+        <h2>iNexaX</h2>
+
+        <ul>
+
+            <li class="active sidebar-item" data-section="dashboardSection">
+                Dashboard
+            </li>
+
+            <li class="sidebar-item" data-section="taskSection">
+                Tasks
+            </li>
+
+            <li class="sidebar-item" data-section="projectSection">
+                Projects
+            </li>
+
+            <li class="sidebar-item" data-section="calendarSection">
+                Calendar
+            </li>
+
+            <li class="sidebar-item" data-section="reportSection">
+                Reports
+            </li>
+
+            <li class="sidebar-item" data-section="notificationSection">
+                Notifications
+            </li>
+
+            <li id="darkModeBtn">
+                Dark Mode
+            </li>
+
+        </ul>
+
+    </aside>
+
+    
+
+    <main class="main-content">
+
+      
+        <section id="dashboardSection" class="dashboard-section active-section">
+
+            <div class="topbar">
+
+                <h1>Dashboard Overview</h1>
+
+                <button id="openModal">
+                    + Create Task
+                </button>
+
+            </div>
+
+            
+            <div class="stats">
+
+                <div class="stat-card" id="totalCard">
+
+                    <h3>Total Tasks</h3>
+
+                    <p id="totalTasks">0</p>
+
+                </div>
+
+                <div class="stat-card" id="completedCard">
+
+                    <h3>Completed</h3>
+
+                    <p id="completedTasks">0</p>
+
+                </div>
+
+                <div class="stat-card" id="pendingCard">
+
+                    <h3>Pending</h3>
+
+                    <p id="pendingTasks">0</p>
+
+                </div>
+
+                <div class="stat-card" id="progressCard">
+
+                    <h3>In Progress</h3>
+
+                    <p id="progressTasks">0</p>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="kanban-board">
+
+                <div class="column pending-column">
+
+                    <h2>Pending</h2>
+
+                </div>
+
+                <div class="column progress-column">
+
+                    <h2>In Progress</h2>
+
+                </div>
+
+                <div class="column review-column">
+
+                    <h2>Review</h2>
+
+                </div>
+
+                <div class="column completed-column">
+
+                    <h2>Completed</h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="taskSection" class="dashboard-section">
+
+            <h1>Tasks</h1>
+
+            <div class="section-box">
+
+                <div id="taskListContainer"></div>
+
+            </div>
+
+        </section>
+
+       
+
+        <section id="projectSection" class="dashboard-section">
+
+            <h1>Projects</h1>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <h3>Website Redesign</h3>
+
+                    <p>UI/UX Enhancement Project</p>
+
+                </div>
+
+                <div class="project-card">
+
+                    <h3>Mobile App</h3>
+
+                    <p>Cross Platform Development</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        
+        <section id="calendarSection" class="dashboard-section">
+
+            <h1>Calendar</h1>
+
+            <div class="section-box">
+
+                <p>
+                    Upcoming meetings, schedules and deadlines will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+       
+
+        <section id="reportSection" class="dashboard-section">
+
+            <h1>Reports & Analytics</h1>
+
+            <div class="report-grid">
+
+                <div class="report-card">
+
+                    <h3>Weekly Productivity</h3>
+
+                    <p id="productivityReport">
+                        0%
+                    </p>
+
+                </div>
+
+                <div class="report-card">
+
+                    <h3>Total Completed</h3>
+
+                    <p id="completedReport">
+                        0
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+       
+        <section id="notificationSection" class="dashboard-section">
+
+            <h1>Notifications</h1>
+
+            <div class="section-box">
+
+                <div id="notificationHistory"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h2>Create Task</h2>
+
+        <input type="text" id="taskInput" placeholder="Enter Task Name">
+
+        <button id="addTaskBtn">
+            Add Task
+        </button>
+
+    </div>
+
+</div>
+
+<div class="modal" id="statsModal">
+
+    <div class="modal-content stats-content">
+
+        <span class="closeStats">&times;</span>
+
+        <h2 id="statsTitle">
+            Task Details
+        </h2>
+
+        <div id="statsList"></div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

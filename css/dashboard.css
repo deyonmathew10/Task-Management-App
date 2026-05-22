@@ -1,0 +1,348 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background:#d8edf7;
+    transition:0.4s;
+}
+
+
+.dashboard-container{
+    display:flex;
+    min-height:100vh;
+}
+
+
+
+.sidebar{
+    width:230px;
+    background:black;
+    color:white;
+    padding:25px;
+}
+
+.sidebar h2{
+    color:red;
+    margin-bottom:35px;
+    font-size:32px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:16px 0;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.sidebar ul li:hover{
+    background:red;
+    transform:translateX(10px);
+}
+
+.active{
+    background:red;
+}
+
+
+
+.main-content{
+    flex:1;
+    padding:30px;
+}
+
+.dashboard-section{
+    display:none;
+}
+
+.active-section{
+    display:block;
+}
+
+
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.topbar h1{
+    font-size:32px;
+}
+
+.topbar button{
+    background:red;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.topbar button:hover{
+    background:black;
+}
+
+
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.stat-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.stat-card h3{
+    margin-bottom:12px;
+}
+
+.stat-card p{
+    font-size:38px;
+    color:red;
+}
+
+
+
+.kanban-board{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.column{
+    background:white;
+    padding:18px;
+    border-radius:20px;
+    min-height:300px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.column h2{
+    margin-bottom:18px;
+}
+
+
+
+.task{
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:14px;
+    cursor:pointer;
+    color:white;
+    transition:0.4s;
+}
+
+.task:hover{
+    transform:translateY(-5px);
+}
+
+.pending{
+    background:#ff9800;
+}
+
+.progress{
+    background:#2196f3;
+}
+
+.review{
+    background:#9c27b0;
+}
+
+.completed{
+    background:#4caf50;
+}
+
+
+
+.section-box,
+.project-card,
+.report-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.project-grid,
+.report-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:1000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background:white;
+    width:350px;
+    margin:10% auto;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    position:relative;
+}
+
+.modal-content input{
+    width:100%;
+    padding:14px;
+    margin:18px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.modal-content button{
+    background:red;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.close,
+.closeStats{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:26px;
+    cursor:pointer;
+}
+
+
+
+.stats-content{
+    width:500px;
+    max-height:500px;
+    overflow-y:auto;
+}
+
+#statsList{
+    margin-top:20px;
+}
+
+.stats-task{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+
+
+.notification{
+    position:fixed;
+    top:20px;
+    right:-400px;
+    background:black;
+    color:white;
+    padding:15px 25px;
+    border-radius:12px;
+    z-index:3000;
+    transition:0.4s;
+}
+
+.notification.show{
+    right:20px;
+}
+
+
+
+.task-list-item{
+    background:#f4f4f4;
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+
+
+.notify-item{
+    background:#f4f4f4;
+    padding:14px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+
+
+.dark-mode{
+    background:#111;
+    color:white;
+}
+
+.dark-mode .column,
+.dark-mode .stat-card,
+.dark-mode .modal-content,
+.dark-mode .project-card,
+.dark-mode .report-card,
+.dark-mode .section-box{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark-mode .stats-task,
+.dark-mode .task-list-item,
+.dark-mode .notify-item{
+    background:#2a2a2a;
+    color:white;
+}
+
+
+
+@media(max-width:1000px){
+
+.dashboard-container{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+}
+
+.kanban-board{
+    grid-template-columns:1fr;
+}
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+}

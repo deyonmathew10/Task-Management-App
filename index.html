@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>iNexaX</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        iNexaX
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content fade-up">
+
+        <h1> 
+             INNOVATE THROUGH<br>
+                iNexaX <br>
+        </br>
+        </h1>
+
+        <p>
+            Streamline workflow with iNexaX and manage projects smarter with modern productivity tools.
+        </p>
+
+        <a href="dashboard.html" class="btn">
+            Get Started
+        </a>
+
+    </div>
+
+    <div class="hero-image floating">
+
+        <img src="https://cdn.dribbble.com/userupload/10355646/file/original-3f4b6464018d2170a191de14624f16cc.jpg?resize=752x&vertical=center">
+
+    </div>
+
+</section>
+
+
+
+<section class="features fade-up" id="features">
+
+    <h2>App Features</h2>
+
+    <div class="feature-grid">
+
+        <div class="card">
+
+            <h3>Task Management</h3>
+
+            <p>
+                Create, organize and track tasks efficiently using a professional workflow system.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Analytics Dashboard</h3>
+
+            <p>
+                Monitor productivity, reports and workflow statistics dynamically.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Team Collaboration</h3>
+
+            <p>
+                Collaborate with employees and manage team projects effectively.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Secure Workflow</h3>
+
+            <p>
+                Professional dashboard designed for modern enterprise workflow management.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="quick-links fade-up">
+
+    <h2>Quick Links</h2>
+
+    <div class="link-grid">
+
+        <div class="quick-card" onclick="openSection('dashboard')">
+            Dashboard
+        </div>
+
+        <div class="quick-card" onclick="openSection('projects')">
+            Projects
+        </div>
+
+        <div class="quick-card" onclick="openSection('reports')">
+            Reports
+        </div>
+
+        <div class="quick-card" onclick="openSection('calendar')">
+            Calendar
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="dynamic-content">
+
+    <div id="dashboard" class="content-box active-box">
+
+        <h2>Dashboard Overview</h2>
+
+        <p>
+            Monitor productivity and workflow using advanced dashboard analytics.
+        </p>
+
+    </div>
+
+    <div id="projects" class="content-box">
+
+        <h2>Projects Management</h2>
+
+        <p>
+            Organize company projects, milestones and employee collaboration dynamically.
+        </p>
+
+    </div>
+
+    <div id="reports" class="content-box">
+
+        <h2>Reports & Analytics</h2>
+
+        <p>
+            Generate productivity reports and workflow insights for better decision making.
+        </p>
+
+    </div>
+
+    <div id="calendar" class="content-box">
+
+        <h2>Calendar Scheduling</h2>
+
+        <p>
+            Manage deadlines, meetings and schedules efficiently using smart calendar tools.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="about fade-up" id="about">
+
+    <h2>About iNexaX</h2>
+
+    <p>
+        iNexaX is a modern productivity platform designed to simplify workflow, improve collaboration and enhance company productivity.
+    </p>
+
+</section>
+
+
+
+<section class="contact fade-up" id="contact">
+
+    <div class="contact-box">
+
+        <h2>Contact Information</h2>
+
+        <form id="contactForm">
+
+            <input type="text" id="fname" placeholder="First Name">
+
+            <input type="text" id="lname" placeholder="Last Name">
+
+            <input type="text" id="phone" placeholder="Phone Number">
+
+            <textarea id="address" placeholder="Address"></textarea>
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<div id="toast"></div>
+
+
+
+<footer>
+
+    <p>© 2026 iNexaX</p>
+
+    <p>Email : iNexaX@gmail.com</p>
+
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
