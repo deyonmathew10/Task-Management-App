@@ -39,12 +39,18 @@ function openSection(sectionId){
 }
 
 /* CONTACT FORM */
+/* CONTACT FORM */
 
 const form =
 document.getElementById('contactForm');
 
 const toast =
 document.getElementById('toast');
+
+const applicationContainer =
+document.getElementById(
+'applicationContainer'
+);
 
 form.addEventListener('submit',(e)=>{
 
@@ -66,28 +72,88 @@ form.addEventListener('submit',(e)=>{
     document.getElementById('address')
     .value.trim();
 
+    /* EMPTY FIELD VALIDATION */
+
     if(fname === '' ||
     lname === '' ||
     phone === '' ||
     address === ''){
 
         showToast(
-        'Please fill all fields'
+        'All fields are required'
         );
+
+        return;
 
     }
 
-    else{
+    /* PHONE VALIDATION */
+
+    if(phone.length !== 10 ||
+    isNaN(phone)){
 
         showToast(
-        'Submitted Successfully'
+        'Phone number must contain 10 digits'
         );
 
-        form.reset();
+        return;
 
     }
 
+    /* SUCCESS */
+
+    showToast(
+    'Application Submitted Successfully'
+    );
+
+    /* CREATE APPLICATION CARD */
+
+    const appCard =
+    document.createElement('div');
+
+    appCard.classList.add(
+    'application-card'
+    );
+
+    appCard.innerHTML = `
+
+        <h3>
+        👤 ${fname} ${lname}
+        </h3>
+
+        <p>
+        📞 ${phone}
+        </p>
+
+        <p>
+        📍 ${address}
+        </p>
+
+    `;
+
+    applicationContainer.prepend(
+    appCard
+    );
+
+    form.reset();
+
 });
+
+/* TOAST MESSAGE */
+
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add('show');
+
+    setTimeout(()=>{
+
+        toast.classList.remove('show');
+
+    },3000);
+
+}
 
 /* TOAST */
 
@@ -386,7 +452,6 @@ async function checkAPIStatus(){
 
 checkAPIStatus();
 
-/* BUTTON RIPPLE EFFECT */
 
 const buttons =
 document.querySelectorAll('button');

@@ -39,9 +39,6 @@ body{
 .dark-mode .navbar{
     background:#000;
 }
-
-
-
 .navbar{
     background:black;
     color:white;
@@ -77,8 +74,6 @@ body{
 .active-link{
     color:red;
 }
-
-
 
 #mobileMenu{
     display:none;
@@ -147,6 +142,7 @@ button,
     width:100px;
     height:100px;
 }
+
 
 @keyframes rippleEffect{
 
@@ -422,7 +418,7 @@ footer{
     padding-bottom:80px;
 }
 
-/
+
 
 .about{
     padding-top:20px;
@@ -448,7 +444,6 @@ footer{
 .stats-section{
     padding-top:100px;
 }
-
 
 
 .contact{
@@ -573,4 +568,43 @@ footer{
         display:block;
     }
 
+}
+
+.submitted-data{
+    padding:70px 40px;
+}
+
+.submitted-data h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:36px;
+}
+
+#applicationContainer{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+
+
+.application-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    line-height:2;
+    transition:0.3s;
+}
+
+.application-card:hover{
+    transform:translateY(-8px);
+}
+
+
+
+.dark-mode .application-card{
+    background:#1f1f1f;
+    color:white;
 }
